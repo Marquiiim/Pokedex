@@ -1,35 +1,21 @@
-const offset = 0
-const limit = 10
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
 const listPokemons = document.getElementById('list-pokemons')
 
 function convertPokemonToLi(pokemon) {
     return `            
-            <li class="pokemon">
-                <span class="number">#001</span>
+            <li class="pokemon ${pokemon.type}">
+                <span class="number">#${pokemon.number}</span>
                 <span class="name">${pokemon.name}</span>
                 <div class="details">
                     <ol class="list-types">
-                        <li class="type">
-                            Grass
-                        </li>
-                        <li class="type">
-                            Poison
-                        </li>
+                        ${pokemon.types.map((type) => `<li class="type ${pokemon.type}">${type}</li>`).join('')}
                     </ol>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+                    <img src="${pokemon.photo}"
                         alt="${pokemon.name}">
                 </div>
             </li>
             `
 }
 
-pokeApi.getPokemons().then((pokemonList) => {
-    const listItems = []
-
-    for (let i = 0; i < pokemonList.length; i++) {
-        const pokemon = pokemonList[i]
-        listItems.push(convertPokemonToLi(pokemon))
-    }
-
+pokeApi.getPokemons().then((pokemonList = []) => {
+    listPokemons.innerHTML += pokemonList.map(convertPokemonToLi).join('')
 })
