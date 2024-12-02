@@ -70,7 +70,7 @@ body {
         padding: 0;
         margin: 0;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
 
         .normal {
             background-color: #a6a877;
@@ -88,7 +88,7 @@ body {
             background-color: #678fee;
         }
 
-        .eletric {
+        .electric {
             background-color: #f7cf2e;
         }
 
