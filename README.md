@@ -12,5 +12,5 @@ Este projeto é uma **Pokedex** interativa desenvolvida com **JavaScript**, **HT
 
 - **JavaScript**: Manipulação de requisições e respostas da API, além de controle da interação do usuário, como a navegação entre as páginas de Pokémon.
 - **HTML**: Estruturação da página web.
-- **CSS**: Estilização da interface para uma melhor experiência de usuário.
+- **CSS**, **SASS**: Estilização da interface para uma melhor experiência de usuário.
 - **PokeAPI**: API que fornece informações sobre os Pokémon, usada para consumir dados da primeira geração da série.
